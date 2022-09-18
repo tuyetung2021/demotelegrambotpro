@@ -17,6 +17,7 @@ def start(update, context):
 
 #Message handler for texts only
 def mimic(update, context):
+    print("mimic")
     context.bot.send_message(update.message.chat.id, update.message.text)
 
     
