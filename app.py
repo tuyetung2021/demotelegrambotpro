@@ -8,16 +8,21 @@ TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
 def start(update, context):
+    print(start)
     #yourname = update.message.chat.first_name
-
-    msg = "Hi ! Welcome to mimic bot."
-    print(msg)
+    msg = "Hi ! Welcome to Milion bot."
     context.bot.send_message(update.message.chat.id, msg)
     
 
 #Message handler for texts only
 def mimic(update, context):
     print("mimic")
+    context.bot.send_message(update.message.chat.id, update.message.text)
+
+def p(update, context):
+    print("p")
+    print("update" + update)
+    print("context" + context)
     context.bot.send_message(update.message.chat.id, update.message.text)
 
     
@@ -41,8 +46,9 @@ def main():
     #handlers
     dp.add_handler(CommandHandler("start",start))
     dp.add_handler(CommandHandler("details", details))
+    dp.add_handler(CommandHandler("p", p))
 
-    dp.add_handler(MessageHandler(Filters.text, mimic))
+    #dp.add_handler(MessageHandler(Filters.text, mimic))
 
 
     dp.add_error_handler(error)
