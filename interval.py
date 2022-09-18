@@ -2,7 +2,7 @@ from threading import Timer
 import time
 
 
-def hidden(update, context):
+def hiddenInterval(update, context):
     while True:       
-        update.message.reply_text('The Price : '+str(context.args[0]))
+        print("hiddenInterval")
         time.sleep(3)

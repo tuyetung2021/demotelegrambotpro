@@ -26,6 +26,7 @@ def p(update, context):
 
 def hidden(update, context):
     print("hidden")
+    interval.hiddenInterval(update, context)
     update.message.reply_text('The Price : '+str(context.args[0]))
 
     
@@ -60,6 +61,7 @@ def main():
     dp.add_handler(CommandHandler("details", details))
     dp.add_handler(CommandHandler("p", p))
     dp.add_handler(CommandHandler("sum", sum))
+    dp.add_handler(CommandHandler("hidden", hidden))
 
     #dp.add_handler(MessageHandler(Filters.text, mimic))
 
