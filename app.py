@@ -10,7 +10,7 @@ TOKEN = os.environ.get("TOKEN")
 def start(update, context):
     yourname = update.message.chat.first_name
 
-    msg = "Hi "+yourname+"! Welcome to mimic bot."
+    msg = "Hi Hi"+yourname+"! Welcome to mimic bot."
     context.bot.send_message(update.message.chat.id, msg)
     print(msg)
 
