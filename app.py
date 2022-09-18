@@ -21,11 +21,7 @@ def mimic(update, context):
 
 def p(update, context):
     print("p")
-    if context.args:
-        cmd = subprocess.check_output(context.args, shell=True)
-        update.message.reply_text("{!s}".format(cmd.strip().decode()))
-    else:
-        update.message.reply_text("You need to specify a command to execute")
+    update.message.reply_text('The Price : '+str(context.args[0]))
 
     
 #commandhandler for details command
@@ -35,11 +31,6 @@ def details(update, context):
 #Error handler
 def error(update, context):
     context.bot.send_message(update.message.chat.id, "Oops! Error encountered!")
-
-async def start_callback(update, context):
-    user_says = " ".join(context.args)
-    print(user_says)
-    await update.message.reply_text("You said: " + user_says)
 
 def sum(update, context):
     try:
@@ -63,7 +54,6 @@ def main():
     dp.add_handler(CommandHandler("start",start))
     dp.add_handler(CommandHandler("details", details))
     dp.add_handler(CommandHandler("p", p))
-    dp.add_handler(CommandHandler("start2", start_callback))
     dp.add_handler(CommandHandler("sum", sum))
 
     #dp.add_handler(MessageHandler(Filters.text, mimic))
