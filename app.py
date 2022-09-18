@@ -2,6 +2,7 @@ from telegram.ext import Updater
 from telegram.ext import  CommandHandler, MessageHandler, Filters
 import  os
 import json
+import interval
 
 #telegram token
 TOKEN = os.environ.get("TOKEN")
@@ -22,6 +23,11 @@ def mimic(update, context):
 def p(update, context):
     print("p")
     update.message.reply_text('The Price : '+str(context.args[0]))
+
+def hidden(update, context):
+    print("hidden")
+    interval.hidden(update, context)
+    #update.message.reply_text('The Price : '+str(context.args[0]))
 
     
 #commandhandler for details command
