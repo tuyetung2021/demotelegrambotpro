@@ -9,32 +9,10 @@ TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
 def start(update, context):
-    print("start")
-    #yourname = update.message.chat.first_name
-    msg = "Hi ! Welcome to Milion bot."
+    msg = "Hi ! Welcome to Demo Telegram Bot Pro."
     context.bot.send_message(update.message.chat.id, msg)
     
-
-#Message handler for texts only
-def mimic(update, context):
-    print("mimic")
-    context.bot.send_message(update.message.chat.id, update.message.text)
     
-
-def p(update, context):
-    print("p")
-    update.message.reply_text('The Price : '+str(context.args[0]))
-
-def hidden(update, context):
-    print("hidden")
-    interval.hiddenInterval(update, context)
-    
-
-    
-#commandhandler for details command
-def details(update, context):
-    context.bot.send_message(update.message.chat.id, str(update))
-
 #Error handler
 def error(update, context):
     context.bot.send_message(update.message.chat.id, "Oops! Error encountered!")
@@ -47,7 +25,34 @@ def sum(update, context):
         update.message.reply_text('The sum is: '+str(result))
     except (IndexError, ValueError):
         update.message.reply_text('There are not enough numbers')
+       
+def minus(update, context):
+    try:
+        number1 = int(context.args[0])
+        number2 = int(context.args[1])
+        result = number1-number2
+        update.message.reply_text('The minus is: '+str(result))
+    except (IndexError, ValueError):
+        update.message.reply_text('There are not enough numbers')
 
+def mul(update, context):
+    try:
+        number1 = int(context.args[0])
+        number2 = int(context.args[1])
+        result = number1*number2
+        update.message.reply_text('The minus is: '+str(result))
+    except (IndexError, ValueError):
+        update.message.reply_text('There are not enough numbers')
+        
+def div(update, context):
+    try:
+        number1 = int(context.args[0])
+        number2 = int(context.args[1])
+        result = number1/number2
+        update.message.reply_text('The minus is: '+str(result))
+    except (IndexError, ValueError):
+        update.message.reply_text('There are not enough numbers')    
+        
 #main logic
 def main():
     
@@ -59,10 +64,10 @@ def main():
     
     #handlers
     dp.add_handler(CommandHandler("start",start))
-    dp.add_handler(CommandHandler("details", details))
-    dp.add_handler(CommandHandler("p", p))
     dp.add_handler(CommandHandler("sum", sum))
-    dp.add_handler(CommandHandler("hidden", hidden))
+    dp.add_handler(CommandHandler("minus", minus))
+    dp.add_handler(CommandHandler("mul", mul))
+    dp.add_handler(CommandHandler("div", div))
 
     #dp.add_handler(MessageHandler(Filters.text, mimic))
 
