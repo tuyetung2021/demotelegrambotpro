@@ -8,9 +8,9 @@ TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
 def start(update, context):
-    yourname = update.message.chat.first_name
+    #yourname = update.message.chat.first_name
 
-    msg = "Hi Hi"+yourname+"! Welcome to mimic bot."
+    msg = "Hi ! Welcome to mimic bot."
     print(msg)
     context.bot.send_message(update.message.chat.id, msg)
     
