@@ -41,6 +41,15 @@ async def start_callback(update, context):
     print(user_says)
     await update.message.reply_text("You said: " + user_says)
 
+def sum(update, context):
+    try:
+        number1 = int(context.args[0])
+        number2 = int(context.args[1])
+        result = number1+number2
+        update.message.reply_text('The sum is: '+str(result))
+    except (IndexError, ValueError):
+        update.message.reply_text('There are not enough numbers')
+
 #main logic
 def main():
     
@@ -55,6 +64,7 @@ def main():
     dp.add_handler(CommandHandler("details", details))
     dp.add_handler(CommandHandler("p", p))
     dp.add_handler(CommandHandler("start2", start_callback))
+    dp.add_handler(CommandHandler("sum", sum))
 
     #dp.add_handler(MessageHandler(Filters.text, mimic))
 
