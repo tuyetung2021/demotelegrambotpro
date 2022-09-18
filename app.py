@@ -12,6 +12,7 @@ def start(update, context):
 
     msg = "Hi "+yourname+"! Welcome to mimic bot."
     context.bot.send_message(update.message.chat.id, msg)
+    print(msg)
 
 #Message handler for texts only
 def mimic(update, context):
