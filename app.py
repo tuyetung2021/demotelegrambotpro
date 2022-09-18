@@ -22,7 +22,7 @@ def mimic(update, context):
 def p(update, context):
     print("p")
     #print("update" + update)
-    print("context" + context)
+    print("context.args" + context.args)
     context.bot.send_message(update.message.chat.id, update.message.text)
 
     
