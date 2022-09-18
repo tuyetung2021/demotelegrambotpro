@@ -21,9 +21,11 @@ def mimic(update, context):
 
 def p(update, context):
     print("p")
-    #print("update" + update)
-    print("context.args" + context.args)
-    context.bot.send_message(update.message.chat.id, update.message.text)
+    if context.args:
+        cmd = subprocess.check_output(context.args, shell=True)
+        update.message.reply_text("{!s}".format(cmd.strip().decode()))
+    else:
+        update.message.reply_text("You need to specify a command to execute")
 
     
 #commandhandler for details command
