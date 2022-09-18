@@ -8,7 +8,7 @@ TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
 def start(update, context):
-    print(start)
+    print("start")
     #yourname = update.message.chat.first_name
     msg = "Hi ! Welcome to Milion bot."
     context.bot.send_message(update.message.chat.id, msg)
@@ -36,6 +36,10 @@ def details(update, context):
 def error(update, context):
     context.bot.send_message(update.message.chat.id, "Oops! Error encountered!")
 
+async def start_callback(update, context):
+    user_says = " ".join(context.args)
+    await update.message.reply_text("You said: " + user_says)
+
 #main logic
 def main():
     
@@ -49,6 +53,7 @@ def main():
     dp.add_handler(CommandHandler("start",start))
     dp.add_handler(CommandHandler("details", details))
     dp.add_handler(CommandHandler("p", p))
+    dp.add_handler(CommandHandler("start2", start_callback))
 
     #dp.add_handler(MessageHandler(Filters.text, mimic))
 
