@@ -19,6 +19,7 @@ def start(update, context):
 def mimic(update, context):
     print("mimic")
     context.bot.send_message(update.message.chat.id, update.message.text)
+    
 
 def p(update, context):
     print("p")
