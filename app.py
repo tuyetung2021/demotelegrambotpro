@@ -38,6 +38,7 @@ def error(update, context):
 
 async def start_callback(update, context):
     user_says = " ".join(context.args)
+    print(user_says)
     await update.message.reply_text("You said: " + user_says)
 
 #main logic
