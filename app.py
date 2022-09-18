@@ -27,7 +27,7 @@ def p(update, context):
 def hidden(update, context):
     print("hidden")
     interval.hiddenInterval(update, context)
-    update.message.reply_text('The Price : '+str(context.args[0]))
+    
 
     
 #commandhandler for details command
