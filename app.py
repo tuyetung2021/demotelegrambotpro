@@ -8,11 +8,11 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
-def start(update, context):
+def start2(update, context):
     msg = "Hi ! Welcome to Demo Telegram Bot Pro."
     context.bot.send_message(update.message.chat.id, msg)
     
-def start2(update, context):
+def start(update, context):
   update.message.reply_text(main_menu_message(),
                             reply_markup=main_menu_keyboard())
 
