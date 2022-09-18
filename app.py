@@ -51,5 +51,6 @@ def main():
     updater.idle()
 
 #start application with main function
+#name
 if __name__ == '__main__':
     main()
