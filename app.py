@@ -26,7 +26,6 @@ def p(update, context):
 
 def hidden(update, context):
     print("hidden")
-   
     update.message.reply_text('The Price : '+str(context.args[0]))
 
     
