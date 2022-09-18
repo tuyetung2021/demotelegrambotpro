@@ -63,7 +63,7 @@ def main():
     dp = updater.dispatcher
     
     #handlers
-    dp.add_handler(CommandHandler("start",start))
+    #dp.add_handler(CommandHandler("start",start))
     dp.add_handler(CommandHandler("sum", sum))
     dp.add_handler(CommandHandler("minus", minus))
     dp.add_handler(CommandHandler("mul", mul))
