@@ -9,7 +9,7 @@ TOKEN = os.environ.get("TOKEN")
 
 #commandhandler for start command
 def start(update, context):
-    msg = "Hi ! Welcome to Demo Telegram Bot Pro."
+    msg = "Hi ! Welcome to Demo Telegram Bot Pro. Dev : @DRCryptoZ"
     context.bot.send_message(update.message.chat.id, msg)
     
 
@@ -63,7 +63,7 @@ def main():
     dp = updater.dispatcher
     
     #handlers
-    #dp.add_handler(CommandHandler("start",start))
+    dp.add_handler(CommandHandler("start",start))
     dp.add_handler(CommandHandler("sum", sum))
     dp.add_handler(CommandHandler("minus", minus))
     dp.add_handler(CommandHandler("mul", mul))
