@@ -2,7 +2,6 @@ from telegram.ext import Updater
 from telegram.ext import  CommandHandler, MessageHandler, Filters
 import  os
 import json
-import interval
 
 #telegram token
 TOKEN = os.environ.get("TOKEN")
